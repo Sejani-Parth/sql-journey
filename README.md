@@ -36,10 +36,23 @@ Practiced:
 - `ORDER BY` with `ASC`/`DESC`
 - Filtering with `WHERE`
 
+### Day 03 — 2026-07-27
+**File:** [`2026-07-27_day03_aggregate-math-string-functions-login-table.sql`](./2026-07-27_day03_aggregate-math-string-functions-login-table.sql)
+
+Practiced:
+- Aggregate functions: `SUM`, `AVG`, `MAX`, `MIN`, `COUNT`
+- Math functions: `ABS`, `CEILING`, `FLOOR`, `SIGN`, `SQUARE`, `SQRT`, `PI`, `COS`, `SIN`, `TAN`, `EXP`
+- String functions: `LEN`, `UPPER`, `LOWER`, `LTRIM`, `RTRIM`, `SUBSTRING`, `REPLACE`, `REPLICATE`
+- `IDENTITY` (auto-increment) and `UNIQUE` constraints on a new `tbl_user_login` table
+- Basic login-style query using `WHERE ... AND`, `OR`, and `!=`
+
 ## 🧠 Notes to self
 - `DELETE FROM table` with no `WHERE` clause removes **all** rows — be careful.
 - `dbo.` is the default schema prefix in SQL Server (`dbo.table_name`).
+- `IDENTITY` auto-generates primary key values, so you don't list that column in `INSERT`.
+- `UNIQUE` stops duplicate values (e.g. same email/username twice) even though it's not the primary key.
 
 ## 🔜 Next up
 - `JOIN`s across `employe_info` and `department_info`
-- `GROUP BY` and aggregate functions (`COUNT`, `SUM`, `AVG`)
+- `GROUP BY` and `HAVING`
+- `LIKE` pattern matching
