@@ -46,13 +46,25 @@ Practiced:
 - `IDENTITY` (auto-increment) and `UNIQUE` constraints on a new `tbl_user_login` table
 - Basic login-style query using `WHERE ... AND`, `OR`, and `!=`
 
+### Day 04 — 2026-07-29
+**File:** [`2026-07-29_day04_datetime-groupby-having-top-clone-db.sql`](./2026-07-29_day04_datetime-groupby-having-top-clone-db.sql)
+
+Practiced:
+- Date/time functions: `GETDATE()`, `SYSDATETIME()`, `CURRENT_TIMESTAMP`, `DATENAME`, `DATEDIFF`
+- `GROUP BY` with aggregate functions and column aliases
+- `HAVING` to filter grouped results
+- `TOP(n)` to limit result rows
+- Creating a second database (`clone_db`) and copying data across databases with `SELECT ... INTO ... FROM other_db.dbo.table`
+
 ## 🧠 Notes to self
 - `DELETE FROM table` with no `WHERE` clause removes **all** rows — be careful.
 - `dbo.` is the default schema prefix in SQL Server (`dbo.table_name`).
 - `IDENTITY` auto-generates primary key values, so you don't list that column in `INSERT`.
 - `UNIQUE` stops duplicate values (e.g. same email/username twice) even though it's not the primary key.
+- `WHERE` filters rows before grouping; `HAVING` filters after `GROUP BY` — that's why `HAVING` can reference the grouped column.
+- `SELECT * INTO new_table FROM other_db.dbo.table` creates and fills a table in one line — handy for quick copies/backups.
 
 ## 🔜 Next up
 - `JOIN`s across `employe_info` and `department_info`
-- `GROUP BY` and `HAVING`
 - `LIKE` pattern matching
+- Subqueries
