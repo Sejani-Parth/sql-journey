@@ -1,0 +1,42 @@
+-- Day 04 - 2026-07-29
+-- Topics: Date/time functions, GROUP BY, HAVING, TOP, cross-database SELECT INTO
+
+use employe_db
+
+select * from dbo.tbl_user_login
+
+select * from dbo.employe_info
+
+select * from dbo.department_info
+
+select GETDATE() AS Today_Date
+select SYSDATETIME() AS system_date_time
+select CURRENT_TIMESTAMP as currunt_time
+
+select DATENAME(MONTH,CURRENT_TIMESTAMP) as currunt_month
+
+select DATEDIFF(YEAR,'1996',CURRENT_TIMESTAMP) as date_deffrents
+
+select * from dbo.employe_info
+
+select count(empName) as 'emp_name_lenth',avg(empSalary) as 'avg_salary',deptid 
+from employe_info 
+where deptid = 10 or deptid = 17
+GROUP BY deptid
+
+select count(empName) as 'emp_name_lenth',avg(empSalary) as 'avg_salary',deptid 
+from employe_info 
+GROUP BY deptid
+having deptid = 10 or deptid = 17
+
+select TOP(3)* from dbo.employe_info order by empSalary desc
+
+select * from dbo.employe_info
+
+create database clone_db
+
+use clone_db
+
+select * into emp_details from employe_db.dbo.employe_info
+
+select * from emp_details
