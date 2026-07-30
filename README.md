@@ -56,6 +56,16 @@ Practiced:
 - `TOP(n)` to limit result rows
 - Creating a second database (`clone_db`) and copying data across databases with `SELECT ... INTO ... FROM other_db.dbo.table`
 
+### Day 05 — 2026-07-30
+**File:** [`2026-07-30_day05_alter-table-default-identity-constraint.sql`](./2026-07-30_day05_alter-table-default-identity-constraint.sql)
+
+Practiced:
+- `ALTER TABLE ... ADD` to add new columns to an existing table
+- `DEFAULT` values for a column
+- Adding an `IDENTITY` column after table creation
+- Named constraints with `CONSTRAINT ... UNIQUE`
+- `UPDATE` with `WHERE` to set values row by row
+
 ## 🧠 Notes to self
 - `DELETE FROM table` with no `WHERE` clause removes **all** rows — be careful.
 - `dbo.` is the default schema prefix in SQL Server (`dbo.table_name`).
@@ -63,6 +73,8 @@ Practiced:
 - `UNIQUE` stops duplicate values (e.g. same email/username twice) even though it's not the primary key.
 - `WHERE` filters rows before grouping; `HAVING` filters after `GROUP BY` — that's why `HAVING` can reference the grouped column.
 - `SELECT * INTO new_table FROM other_db.dbo.table` creates and fills a table in one line — handy for quick copies/backups.
+- `ALTER TABLE ... ADD column DEFAULT value` sets that value for existing rows too, not just future inserts.
+- Naming a constraint (`CONSTRAINT Pid_key UNIQUE`) makes it easier to find/drop later than an auto-generated name.
 
 ## 🔜 Next up
 - `JOIN`s across `employe_info` and `department_info`
